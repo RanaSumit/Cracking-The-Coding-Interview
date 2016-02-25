@@ -15,14 +15,12 @@ public class UniqueChars {
 	    int checker = 0;
 	    for (int i = 0; i < str.length(); i++) { 
 	    	
-	        // set val to be the difference between the char at i and 'a'
-	        // if you have an upper-case letter e.g. 'A' you will get a
-	        // negative 'val' which is illegal
+	        // Val is the difference that set between i and 'a'
+	        // Lets say you have an upper case letter like "B", you will get a negative 'val' which is  illegal
 	    	
 	        int val = str.charAt(i) - 'a';
-	        // if this lowercase letter has been seen before, then
-	        // the corresponding bit in checker will have been set and
-	        // we can exit immediately.
+	        // We already know that if a letter is repeated (already seen) before, it's respective bit in checker should have been set.
+	        // Quitting
 	        
 	        if ((checker & (1 << val)) > 0) return "String does not have Unique Characters";
 	        checker |= (1 << val);         // set the bit to indicate we have now seen the letter.
